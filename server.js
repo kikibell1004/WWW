@@ -11,7 +11,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Middleware
 app.use(cors());
-app.use(express.jstatic("public"));
+app.use(express.static(path.join(__dirname, "src")));
 
 // Simple SQLite DB for orders
 const dbPath = path.join(__dirname, "db.sqlite");
@@ -114,5 +114,5 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "src", "index.html"));
 });
