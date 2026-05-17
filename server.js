@@ -11,7 +11,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.jstatic("public"));
 
 // Simple SQLite DB for orders
 const dbPath = path.join(__dirname, "db.sqlite");
@@ -111,4 +111,8 @@ app.use(express.static(path.join(__dirname, "..", "frontend")));
 
 app.listen(port, () => {
     console.log('Server running on http://localhost:${port}');
+});
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
