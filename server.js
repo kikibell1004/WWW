@@ -107,7 +107,7 @@ app.get("/orders", (req, res) => {
 });
 
 // Serve static frontend (for quick local testing)
-app.use(express.static(path.join(__dirname, "..", "frontend")));
+//app.use(express.static(path.join(__dirname, "..", "frontend")));
 
 app.listen(port, () => {
     console.log('Server running on http://localhost:${port}');
