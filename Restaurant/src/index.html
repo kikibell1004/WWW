@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Breezeway Style Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Breezeway Grill</h1>
+            <p>Comfort food, cold drinks, and good people.</p>
+            <button id="orderNowBtn">Order Now</button>
+        </div>
+    </header>
+
+    <nav class="top-nav">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order</a>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Local spot for burgers, wings, and ice-cold drinks. Dine in, carry out, or order online.</p>
+        </section>
+
+        <section id="menu" class="section">
+            <h2>Menu</h2>
+            <div id="menuItems" class="menu-grid">
+                <!-- Filled by script.js -->
+            </div>
+        </section>
+
+        <section id="hours" class="section">
+            <h2>Hours & Location</h2>
+            <p><strong>Mon-Thu:</strong> 11am - 9pm</p>
+            <p><strong>Fri-Sat:</strong> 11am - 11pm</p>
+            <p><strong>Sun:</strong> Closed</p>
+            <p><strong>Address:</strong> 123 Main St, Opelika, AL</p>
+        </section>
+
+        <section id="order" class="section">
+            <h2>Online Order</h2>
+            <div class="order-layout">
+                <div>
+                    <h3>Your Cart</h3>
+                    <ul id="cartList"></ul>
+                    <p><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
+                </div>
+                <div>
+                    <h3>Customer Info</h3>
+                    <form id="checkoutForm">
+                        <label>
+                            Name
+                            <input type="text" name="name" required />
+                        </label>
+                        <label>
+                            Phone
+                            <input type="tel" name="phone" required />
+                        </label>
+                        <label>
+                            Pickup or Delivery
+                            <select name="type" required>
+                                <option value="pickup">Pickup</option>
+                                <option value="delivery">Delivery</option>
+                            </select>
+                        </label>
+                        <label id="addressField" style="display:none;">
+                            Delivery Address
+                            <input type="text" name="address" />
+                        </label>
+                        <button type="submit">Proceed to Payment</button>
+                    </form>
+                    <p id="checkoutMessage" class="message"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@breezewaygrill.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Breezeway Grill</p>
+    </footer>
+
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
